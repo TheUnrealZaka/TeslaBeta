@@ -40,7 +40,7 @@ public class PinnableButton {
 		this.save_y = this.y;
 
 		this.width  = this.master.get_width();
-		this.height = font.get_string_height();
+		this.height = font.getStringHeight();
 
 		this.first = true;
 	}

@@ -30,37 +30,37 @@ public class Hud extends Screen {
 
         var settings = Client.getSettingManager();
 
-        Frame.nc_r = settings.getSettingByTag("GUI", "ClickGUINameFrameR").getValue();
-        Frame.nc_g = settings.getSettingByTag("GUI", "ClickGUINameFrameG").getValue();
-        Frame.nc_b = settings.getSettingByTag("GUI", "ClickGUINameFrameB").getValue();
+        Frame.nc_r = settings.getSettingByTag("GUI", "ClickGUINameFrameR").getValueInt();
+        Frame.nc_g = settings.getSettingByTag("GUI", "ClickGUINameFrameG").getValueInt();
+        Frame.nc_b = settings.getSettingByTag("GUI", "ClickGUINameFrameB").getValueInt();
 
-        Frame.bg_r = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameR").getValue();
-        Frame.bg_g = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameG").getValue();
-        Frame.bg_b = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameB").getValue();
-        Frame.bg_a = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameA").getValue();
+        Frame.bg_r = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameR").getValueInt();
+        Frame.bg_g = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameG").getValueInt();
+        Frame.bg_b = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameB").getValueInt();
+        Frame.bg_a = settings.getSettingByTag("GUI", "ClickGUIBackgroundFrameA").getValueInt();
 
-        Frame.bd_r = settings.getSettingByTag("GUI", "ClickGUIBorderFrameR").getValue();
-        Frame.bd_g = settings.getSettingByTag("GUI", "ClickGUIBorderFrameG").getValue();
-        Frame.bd_b = settings.getSettingByTag("GUI", "ClickGUIBorderFrameB").getValue();
+        Frame.bd_r = settings.getSettingByTag("GUI", "ClickGUIBorderFrameR").getValueInt();
+        Frame.bd_g = settings.getSettingByTag("GUI", "ClickGUIBorderFrameG").getValueInt();
+        Frame.bd_b = settings.getSettingByTag("GUI", "ClickGUIBorderFrameB").getValueInt();
         Frame.bd_a = 0;
 
-        Frame.bdw_r = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValue();
-        Frame.bdw_g = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValue();
-        Frame.bdw_b = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValue();
+        Frame.bdw_r = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValueInt();
+        Frame.bdw_g = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValueInt();
+        Frame.bdw_b = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValueInt();
         Frame.bdw_a = 255;
 
-        PinnableButton.nc_r = settings.getSettingByTag("GUI", "ClickGUINameWidgetR").getValue();
-        PinnableButton.nc_g = settings.getSettingByTag("GUI", "ClickGUINameWidgetG").getValue();
-        PinnableButton.nc_b = settings.getSettingByTag("GUI", "ClickGUINameWidgetB").getValue();
+        PinnableButton.nc_r = settings.getSettingByTag("GUI", "ClickGUINameWidgetR").getValueInt();
+        PinnableButton.nc_g = settings.getSettingByTag("GUI", "ClickGUINameWidgetG").getValueInt();
+        PinnableButton.nc_b = settings.getSettingByTag("GUI", "ClickGUINameWidgetB").getValueInt();
 
-        PinnableButton.bg_r = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetR").getValue();
-        PinnableButton.bg_g = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetG").getValue();
-        PinnableButton.bg_b = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetB").getValue();
-        PinnableButton.bg_a = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetA").getValue();
+        PinnableButton.bg_r = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetR").getValueInt();
+        PinnableButton.bg_g = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetG").getValueInt();
+        PinnableButton.bg_b = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetB").getValueInt();
+        PinnableButton.bg_a = settings.getSettingByTag("GUI", "ClickGUIBackgroundWidgetA").getValueInt();
 
-        PinnableButton.bd_r = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValue();
-        PinnableButton.bd_g = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValue();
-        PinnableButton.bd_b = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValue();
+        PinnableButton.bd_r = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValueInt();
+        PinnableButton.bd_g = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValueInt();
+        PinnableButton.bd_b = settings.getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValueInt();
     }
 
     @Override
@@ -106,7 +106,6 @@ public class Hud extends Screen {
     @Override
     public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
         frame.render(context, mouseX, mouseY, 2);
-        frame.render(mouseX, mouseY, 2);
         super.render(context, mouseX, mouseY, delta);
     }
 }

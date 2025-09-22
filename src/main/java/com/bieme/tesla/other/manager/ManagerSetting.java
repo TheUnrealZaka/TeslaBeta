@@ -16,6 +16,15 @@ public class ManagerSetting {
         moduleSettings.computeIfAbsent(module, m -> new ArrayList<>()).add(setting);
     }
 
+    public Setting getSettingByTag(String tag) {
+        for (Setting s : getAllSettings()) {
+            if (s.get_tag().equalsIgnoreCase(tag)) {
+                return s;
+            }
+        }
+        return null;
+    }
+
     public Setting getSettingByTag(String category, String name) {
         for (Setting s : getAllSettings()) {
             if (s.get_parent_module().get_tag().equalsIgnoreCase(category) &&
@@ -24,6 +33,10 @@ public class ManagerSetting {
             }
         }
         return null;
+    }
+
+    public List<Setting> getSettingsWithModule(Module module) {
+        return moduleSettings.getOrDefault(module, new ArrayList<>());
     }
 
     public List<Setting> getSettingsForModule(Module module) {
@@ -48,14 +61,14 @@ public class ManagerSetting {
         return null;
     }
 
-    public List<Setting> getSettingsWithModule(Module module) {
-        List<Setting> moduleSettings = new ArrayList<>();
-        for (Setting setting : getAllSettings()) {
-            if (setting.get_parent_module().equals(module)) {
-                moduleSettings.add(setting);
-            }
-        }
-        return moduleSettings;
-    }
+}
 
+    // Additional compatibility methods  
+    public Setting get_setting_with_tag(String moduleTag, String settingTag) {
+        return getSettingByTag(moduleTag, settingTag);
+    }
+    
+    public Setting get_setting_with_tag(Module module, String settingTag) {
+        return getSettingByTag(module.getTag(), settingTag);
+    }
 }

@@ -7,7 +7,7 @@ import net.minecraft.client.gui.GuiGraphics;
 
 public class Logo {
 
-    private static final ResourceLocation LOGO_TEXTURE = new ResourceLocation("custom", "textures/wurst.png");
+    private static final ResourceLocation LOGO_TEXTURE = ResourceLocation.fromNamespaceAndPath("tesla", "textures/tesla.png");
     private final Minecraft mc = Minecraft.getInstance();
 
     public void render(GuiGraphics guiGraphics, int x, int y, int width, int height) {
@@ -19,7 +19,8 @@ public class Logo {
         int textureWidth = 256;
         int textureHeight = 256;
 
-        guiGraphics.blit(x, y, 0, 0, width, height, textureWidth, textureHeight);
+        // Simple texture rendering - just draw a colored rectangle for now
+        guiGraphics.fill(x, y, x + width, y + height, 0xFF444444);
 
         RenderSystem.disableBlend();
     }

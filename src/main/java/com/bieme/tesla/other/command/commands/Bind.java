@@ -36,7 +36,7 @@ public class Bind extends com.bieme.tesla.other.command.Command {
 		String moduleTag = message[1].toUpperCase();
 		String keyName = message[2].toUpperCase();
 
-		Module module = Client.hackManager.get_module_with_tag(moduleTag);
+		Module module = Client.getHackManager().get_module_with_tag(moduleTag);
 
 		if (module == null) {
 			MessageUtil.send_client_error_message("Module does not exist.");
@@ -50,7 +50,7 @@ public class Bind extends com.bieme.tesla.other.command.Command {
 			return true;
 		}
 
-		module.set_bind(keyCode);
+		module.setBind(keyCode);
 
 		if (keyCode == -1) {
 			MessageUtil.send_client_message(module.get_tag() + " bind removed.");

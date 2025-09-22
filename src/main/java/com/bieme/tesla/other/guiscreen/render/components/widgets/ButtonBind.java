@@ -42,7 +42,7 @@ public class ButtonBind extends AbstractWidget {
 		this.save_y = this.y;
 
 		this.width = master.get_width();
-		this.height = font.get_string_height();
+		this.height = font.getStringHeight();
 
 		this.button_name = tag;
 	}
@@ -118,13 +118,13 @@ public class ButtonBind extends AbstractWidget {
 	public void bind(char char_, int key) {
 		if (this.waiting) {
 			switch (key) {
-				case Client.KEY_GUI_ESCAPE -> this.waiting = false;
-				case Client.KEY_DELETE -> {
-					this.master.get_module().set_bind(0);
+				case 256 -> this.waiting = false; // ESCAPE key
+				case 261 -> { // DELETE key
+					this.master.get_module().setKey(0);
 					this.waiting = false;
 				}
 				default -> {
-					this.master.get_module().set_bind(key);
+					this.master.get_module().setKey(key);
 					this.waiting = false;
 				}
 			}
@@ -159,7 +159,7 @@ public class ButtonBind extends AbstractWidget {
 		int bg_a = Client.clickGui.theme_widget_background_a;
 
 		if (this.waiting) {
-			ClientDraw.draw_rect(get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
+			ClientDraw.drawRect(null, get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, new java.awt.Color(bg_r, bg_g, bg_b, bg_a));
 			this.tick += 0.5f;
 
 			if (this.tick >= 15) this.points = "..";
@@ -169,15 +169,15 @@ public class ButtonBind extends AbstractWidget {
 				this.tick = 0.0f;
 			}
 
-			ClientDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
+			ClientDraw.drawString(null, "Listening " + this.points, this.x + 2, this.save_y, new java.awt.Color(ns_r, ns_g, ns_b, ns_a));
 		} else {
-			String bindString = this.master.get_module().get_bind("string");
-			ClientDraw.draw_string("Bind <" + bindString + ">", this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
+			String bindString = String.valueOf(this.master.get_module().getKey());
+			ClientDraw.drawString(null, "Bind <" + bindString + ">", this.x + 2, this.save_y, new java.awt.Color(ns_r, ns_g, ns_b, ns_a));
 		}
 	}
 
 	public void set_key(int key) {
-		this.master.get_module().set_bind(key);
+		this.master.get_module().setKey(key);
 	}
 
 	public void set_binding(boolean value) {

@@ -18,7 +18,7 @@ public class Watermark extends Pinnable {
 
 		String line = Client.CLIENT_NAME + " v" + Client.CLIENT_VERSION;
 
-		create_line(line, this.docking(2, line), 2, nl_r, nl_g, nl_b, nl_a);
+		create_line(guiGraphics, line, this.docking(2, line), 2, nl_r, nl_g, nl_b, nl_a);
 
 		this.set_width(this.get(line, "width") + 4);
 		this.set_height(this.get(line, "height") + 4);

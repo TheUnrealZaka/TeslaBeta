@@ -29,11 +29,11 @@ public class Toggle extends Command {
 			return true;
 		}
 
-		Module module = Client.hackManager.get_module_with_tag(moduleName);
+		Module module = Client.getHackManager().get_module_with_tag(moduleName);
 
 		if (module != null) {
 			module.toggle();
-			MessageUtil.send_client_message("[" + module.get_tag() + "] - Toggled to " + module.is_active() + ".");
+			MessageUtil.send_client_message("[" + module.get_tag() + "] - Toggled to " + module.isActive() + ".");
 		} else {
 			MessageUtil.send_client_error_message("Module does not exist.");
 		}

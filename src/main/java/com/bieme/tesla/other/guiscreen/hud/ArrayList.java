@@ -38,7 +38,7 @@ public class ArrayList extends Pinnable {
 		int nl_a = getIntSetting("HUD", "HUDStringsColorA", 255);
 
 		List<Module> prettyModules = getActiveModules().stream()
-				.sorted(Comparator.comparing(this::getWidthString).reversed())
+				.sorted(Comparator.comparing((Module module) -> getWidthString(module.getName())).reversed())
 				.collect(Collectors.toList());
 
 		boolean isTopR = isSettingValue("HUD", "HUDArrayList", "Top R");
@@ -117,17 +117,17 @@ public class ArrayList extends Pinnable {
 	}
 
 	private int getIntSetting(String category, String tag, int defaultValue) {
-		var setting = Client.get_setting_manager().get_setting_with_tag(category, tag);
-		return setting != null ? setting.get_sliderValueInt() : defaultValue;
+		var setting = Client.getSettingManager().get_setting_with_tag(category, tag);
+		return setting != null ? setting.getSliderValueInt() : defaultValue;
 	}
 
 	private boolean isSettingValue(String category, String tag, String value) {
-		var setting = Client.get_setting_manager().get_setting_with_tag(category, tag);
+		var setting = Client.getSettingManager().get_setting_with_tag(category, tag);
 		return setting != null && setting.in(value);
 	}
 
 	private List<Module> getActiveModules() {
-		return Client.get_hack_manager().get_array_active_hacks();
+		return Client.getHackManager().get_array_active_hacks();
 	}
 
 	private boolean isHiddenTag(String tag) {

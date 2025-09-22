@@ -6,6 +6,7 @@ import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.client.gui.GuiGraphics;
 
 public class FriendList extends Pinnable {
 
@@ -17,7 +18,7 @@ public class FriendList extends Pinnable {
     public static ChatFormatting bold = ChatFormatting.BOLD;
 
     @Override
-    public void render() {
+    public void render(GuiGraphics guiGraphics) {
         int nl_r = Client.getSettingManager().getSettingByTag("HUDStringsColorR").getSliderValueInt();
         int nl_g = Client.getSettingManager().getSettingByTag("HUDStringsColorG").getSliderValueInt();
         int nl_b = Client.getSettingManager().getSettingByTag("HUDStringsColorB").getSliderValueInt();
@@ -27,12 +28,12 @@ public class FriendList extends Pinnable {
 
         passes = 0;
 
-        create_line(line1, this.docking(1, line1), 2, nl_r, nl_g, nl_b, nl_a);
+        create_line(guiGraphics, line1, this.docking(1, line1), 2, nl_r, nl_g, nl_b, nl_a);
 
         if (!OnlineFriends.getFriends().isEmpty()) {
             for (Player e : OnlineFriends.getFriends()) {
                 passes++;
-                create_line(e.getName().getString(), this.docking(1, e.getName().getString()), this.get(line1, "height") * passes, nl_r, nl_g, nl_b, nl_a);
+                create_line(guiGraphics, e.getName().getString(), this.docking(1, e.getName().getString()), this.get(line1, "height") * passes, nl_r, nl_g, nl_b, nl_a);
             }
         }
 

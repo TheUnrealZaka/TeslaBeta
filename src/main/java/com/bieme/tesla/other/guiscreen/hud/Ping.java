@@ -4,6 +4,7 @@ import com.bieme.tesla.Client;
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.multiplayer.PlayerInfo;
+import net.minecraft.client.gui.GuiGraphics;
 
 public class Ping extends Pinnable {
 
@@ -12,7 +13,7 @@ public class Ping extends Pinnable {
 	}
 
 	@Override
-	public void render() {
+	public void render(GuiGraphics guiGraphics) {
 		int nl_r = Client.getSettingManager().getSettingByTag("HUDStringsColorR").getSliderValueInt();
 		int nl_g = Client.getSettingManager().getSettingByTag("HUDStringsColorG").getSliderValueInt();
 		int nl_b = Client.getSettingManager().getSettingByTag("HUDStringsColorB").getSliderValueInt();
@@ -20,7 +21,7 @@ public class Ping extends Pinnable {
 
 		String line = "Ping: " + get_ping();
 
-		create_line(line, this.docking(1, line), 2, nl_r, nl_g, nl_b, nl_a);
+		create_line(guiGraphics, line, this.docking(1, line), 2, nl_r, nl_g, nl_b, nl_a);
 
 		this.set_width(this.get(line, "width") + 2);
 		this.set_height(this.get(line, "height") + 2);

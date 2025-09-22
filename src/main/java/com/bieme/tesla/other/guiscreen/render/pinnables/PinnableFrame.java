@@ -50,7 +50,7 @@ public class PinnableFrame {
 	public static int bdw_b = 0;
 	public static int bdw_a = 255;
 
-	public final Minecraft mc = Minecraft.getMinecraft();
+	public final Minecraft mc = Minecraft.getInstance();
 
 	public PinnableFrame(String name, String tag, int initial_x, int initial_y) {
 		this.pinnable_button = new ArrayList<>();
@@ -159,8 +159,8 @@ public class PinnableFrame {
 
 	public void crush(int mx, int my) {
 		// Get current screen real length.
-		int screen_x = (mc.displayWidth / 2);
-		int screen_y = (mc.displayHeight / 2);
+		int screen_x = (mc.getWindow().getGuiScaledWidth() / 2);
+		int screen_y = (mc.getWindow().getGuiScaledHeight() / 2);
 
 		set_x(mx - this.move_x);
 		set_y(my - this.move_y);
@@ -219,10 +219,10 @@ public class PinnableFrame {
 		bd_a  = color;
 		bdw_a = 255;
 
-		ClientDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
-		ClientDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");
-
-		ClientDraw.draw_string(this.name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b, this.nc_a);
+		ClientDraw.drawRect(null, this.x, this.y, this.x + this.width, this.y + this.height, new java.awt.Color(this.bg_r, this.bg_g, this.bg_b, this.bg_a));
+		// ClientDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right"); // TODO: Fix border drawing
+		
+		ClientDraw.drawString(null, this.name, this.x + 4, this.y + 4, new java.awt.Color(this.nc_r, this.nc_g, this.nc_b, 255));
 
 		if (is_moving()) {
 			crush(mx, my);
@@ -234,7 +234,7 @@ public class PinnableFrame {
 			pinnables_buttons.render(mx, my, separate);
 
 			if (pinnables_buttons.motion(mx, my)) {
-				ClientDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left");
+				// ClientDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left"); // TODO: Fix border drawing
 			}
 		}
 	}

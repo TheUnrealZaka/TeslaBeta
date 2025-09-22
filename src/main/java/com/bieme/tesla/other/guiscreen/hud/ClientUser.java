@@ -5,6 +5,7 @@ import com.bieme.tesla.other.guiscreen.render.ClientDraw;
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 public class ClientUser extends Pinnable {
 
@@ -13,7 +14,7 @@ public class ClientUser extends Pinnable {
 	}
 
 	@Override
-	public void render() {
+	public void render(GuiGraphics guiGraphics) {
 		int r = Client.getSettingManager().getSettingByTag("HUDStringsColorR").getSliderValueInt();
 		int g = Client.getSettingManager().getSettingByTag("HUDStringsColorG").getSliderValueInt();
 		int b = Client.getSettingManager().getSettingByTag("HUDStringsColorB").getSliderValueInt();
@@ -36,7 +37,8 @@ public class ClientUser extends Pinnable {
 		String line = greeting + ", " + ChatFormatting.GOLD + ChatFormatting.BOLD + username + ChatFormatting.RESET + " you're looking fine today :)";
 
 		int screenWidth = Minecraft.getInstance().getWindow().getGuiScaledWidth();
-		mc.font.drawShadow(line, screenWidth / 2f - mc.font.width(line) / 2f, 20f, new ClientDraw.TravisColor(r, g, b, a).hex());
+		int color = (a << 24) | (r << 16) | (g << 8) | b;
+		guiGraphics.drawString(mc.font, line, (int) (screenWidth / 2f - mc.font.width(line) / 2f), 20, color, true);
 
 		this.set_width(this.get(line, "width") + 2);
 		this.set_height(this.get(line, "height") + 2);

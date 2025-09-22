@@ -16,6 +16,19 @@ public class ClientGui extends Screen {
 
 	private int frame_x = 10;
 	private Frame current;
+	
+	// Field needed by Pinnable classes
+	public boolean on_gui = false;
+	
+	// Methods for HUD support
+	public Frame get_frame_hud() {
+		return frame.isEmpty() ? null : frame.get(0);
+	}
+	
+	public java.util.List<Object> get_array_huds() {
+		// TODO: Return actual HUD list when implemented
+		return new java.util.ArrayList<>();
+	}
 
 	public int theme_frame_name_r         = 0;
 	public int theme_frame_name_g         = 0;
@@ -52,7 +65,7 @@ public class ClientGui extends Screen {
 		super(null);
 
 		for (Category category : Category.values()) {
-			Frame frame = new Frame(category);
+			Frame frame = new Frame(category, frame_x, 3);
 			frame.set_x(this.frame_x);
 			this.frame.add(frame);
 			this.frame_x += frame.get_width() + 5;
@@ -70,8 +83,8 @@ public class ClientGui extends Screen {
 
 	@Override
 	public void removed() {
-		if (Client.hackManager != null)
-			Client.hackManager.get_module_with_tag("GUI").set_active(false);
+		if (Client.getHackManager() != null)
+			Client.getHackManager().get_module_with_tag("GUI").set_active(false);
 	}
 
 	@Override
@@ -125,7 +138,7 @@ public class ClientGui extends Screen {
 	public void render(net.minecraft.client.gui.GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		for (Frame frame : this.frame) {
-			frame.render(mouseX, mouseY);
+			frame.render(guiGraphics, mouseX, mouseY, 0);
 		}
 	}
 

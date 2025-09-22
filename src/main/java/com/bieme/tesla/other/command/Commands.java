@@ -26,7 +26,7 @@ public class Commands {
 		add_command(new Alert());
 		add_command(new Help());
 		add_command(new Friend());
-		add_command(new Drawn());
+		// add_command(new Drawn()); // Disabled until render system is fixed
 		add_command(new Enemy());
 		add_command(new Config());
 

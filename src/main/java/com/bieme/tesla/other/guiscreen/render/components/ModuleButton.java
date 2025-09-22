@@ -47,7 +47,7 @@ public class ModuleButton {
 					widget.add(new Button(master, this, setting.get_tag(), settings_height));
 					break;
 				case "combobox":
-					widget.add(new WurstplusCombobox(master, this, setting.get_tag(), settings_height));
+					// widget.add(new WurstplusCombobox(master, this, setting.get_tag(), settings_height)); // TODO: Fix combobox implementation
 					break;
 				case "label":
 					widget.add(new WurstplusLabel(master, this, setting.get_tag(), settings_height));
@@ -87,6 +87,20 @@ public class ModuleButton {
 	public void set_open(boolean value) { this.opened = value; }
 
 	public void set_pressed(boolean value) { module.setEnabled(value); }
+
+	public void setKey(int key) { 
+		// Set the keybind for the module
+		module.setKey(key);
+	}
+
+	public void setBinding(boolean binding) {
+		// This method is called by widgets to indicate binding state
+		// For now, we'll just implement it as a stub
+	}
+
+	public int getSettingsHeight() {
+		return settings_height;
+	}
 
 	public void does_widgets_can(boolean can) {
 		for (AbstractWidget widgets : widget) widgets.does_can(can);

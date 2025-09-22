@@ -2,11 +2,7 @@ package com.bieme.tesla;
 
 import com.bieme.tesla.modules.utils.chat.MessageUtil;
 import com.bieme.tesla.other.guiscreen.ClientGui;
-import com.bieme.tesla.other.manager.ManagerCommand;
-import com.bieme.tesla.other.manager.ManagerConfig;
-import com.bieme.tesla.other.manager.ManagerHack;
-import com.bieme.tesla.other.manager.ManagerFriend;
-import com.bieme.tesla.other.manager.ManagerSetting;
+import com.bieme.tesla.other.manager.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,6 +27,7 @@ public class Client {
     private static ManagerCommand commandManager;
     private static ManagerFriend friendManager;
     private static ManagerSetting settingManager;
+    private static SimpleHudManager hudManager;
 
     public static ClientGui clickGui;
 
@@ -50,6 +47,7 @@ public class Client {
         hackManager = new ManagerHack();
         commandManager = new ManagerCommand();
         friendManager = new ManagerFriend();
+        hudManager = new SimpleHudManager();
         clickGui = new ClientGui();
         click_hud = clickGui;
 
@@ -86,5 +84,14 @@ public class Client {
     public static ManagerSetting getSettingManager() {
         return settingManager;
     }
+    
+    public static SimpleHudManager get_hud_manager() {
+        return hudManager;
+    }
+    
+    // Legacy compatibility methods
+    public static ManagerConfig get_config_manager() { return getConfigManager(); }
+    public static ManagerHack get_hack_manager() { return getHackManager(); }
+    public static ManagerSetting get_setting_manager() { return getSettingManager(); }
 
     }

@@ -1,14 +1,11 @@
 package com.bieme.tesla.other.guiscreen.render.components.widgets;
 
-import me.travis.turok.draw.RenderHelp;
-import me.travis.wurstplus.Wurstplus;
+import com.bieme.tesla.Client;
 import com.bieme.tesla.other.guiscreen.render.ClientDraw;
 import com.bieme.tesla.other.guiscreen.render.components.AbstractWidget;
 import com.bieme.tesla.other.guiscreen.render.components.Frame;
 import com.bieme.tesla.other.guiscreen.render.components.ModuleButton;
 import com.bieme.tesla.other.guiscreen.settings.Setting;
-import net.minecraft.client.renderer.GlStateManager;
-import org.lwjgl.opengl.GL11;
 
 // Travis.
 
@@ -38,7 +35,7 @@ public class WurstplusLabel extends AbstractWidget {
 	public WurstplusLabel(Frame frame, ModuleButton master, String tag, int update_postion) {
 		this.frame   = frame;
 		this.master  = master;
-		this.setting = Wurstplus.get_setting_manager().get_setting_with_tag(master.get_module(), tag);
+		this.setting = Client.getSettingManager().get_setting_with_tag(master.get_module().getTag(), tag);
 
 		this.x = master.get_x();
 		this.y = update_postion;
@@ -46,11 +43,11 @@ public class WurstplusLabel extends AbstractWidget {
 		this.save_y = this.y;
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height();
+		this.height = font.getStringHeight();
 
-		this.label_name = this.setting.get_name();
+		this.label_name = this.setting.getName();
 
-		if (this.setting.get_name().equalsIgnoreCase("info")) {
+		if (this.setting.getName().equalsIgnoreCase("info")) {
 			this.info = true;
 		}
 
@@ -172,14 +169,13 @@ public class WurstplusLabel extends AbstractWidget {
 
 				GL11.glPopMatrix();
 
-				RenderHelp.release_gl();
 			}
 		}
 
 		if (this.info) {
-			ClientDraw.draw_string(this.setting.get_value(s), this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
+			ClientDraw.draw_string(this.setting.getStringValue(), this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
 		} else {
-			ClientDraw.draw_string(this.label_name + " \"" + this.setting.get_value(s) + "\"", this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
+			ClientDraw.draw_string(this.label_name + " \"" + this.setting.getStringValue() + "\"", this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
 		}
 	}
 }

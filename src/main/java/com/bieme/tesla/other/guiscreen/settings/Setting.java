@@ -142,15 +142,29 @@ public class Setting {
 	public Module get_parent_module() { return master; }
 	public String get_tag() { return tag; }
 
-	public int getValue() {
+	public double getValue() {
+		switch (type) {
+			case "boolean":
+				return boolValue ? 1.0 : 0.0;
+			case "combobox":
+				return 0.0;
+			case "label":
+				return 0.0;
+			case "double":
+			case "int":
+				return sliderValue;
+			default:
+				return 0.0;
+		}
+	}
+	
+	public int getValueInt() {
 		switch (type) {
 			case "boolean":
 				return boolValue ? 1 : 0;
 			case "combobox":
-				// returns 0
 				return 0;
 			case "label":
-				// labels don't have int values
 				return 0;
 			case "double":
 				return (int) Math.round(sliderValue);
@@ -159,5 +173,48 @@ public class Setting {
 			default:
 				return 0;
 		}
+	}
+	
+	public void setValue(double value) {
+		switch (type) {
+			case "boolean":
+				boolValue = value != 0.0;
+				break;
+			case "double":
+			case "int":
+				setSliderValue(value);
+				break;
+		}
+	}
+	
+	public void setValue(boolean value) {
+		if (type.equals("boolean")) {
+			this.boolValue = value;
+		}
+	}
+
+	public boolean isInteger() {
+		return type.equals("int");
+	}
+	
+	// Additional compatibility methods
+	public String get_current_value() {
+		return getStringValue();
+	}
+	
+	public void set_current_value(String value) {
+		setStringValue(value);
+	}
+	
+	public List<String> get_values() {
+		return options != null ? options : new ArrayList<>();
+	}
+	
+	public String get_name() {
+		return getName();
+	}
+	
+	public int get_sliderValueInt() {
+		return getSliderValueInt();
 	}
 }
