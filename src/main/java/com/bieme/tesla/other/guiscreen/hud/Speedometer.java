@@ -28,7 +28,7 @@ public class Speedometer extends Pinnable {
         
         int r = 255, g = 255, b = 255, a = 255;
 
-        create_line(bps, this.docking(1, bps), 2, r, g, b, a);
+        create_line(guiGraphics, bps, this.docking(1, bps), 2, r, g, b, a);
 
         this.set_width(this.get(bps, "width") + 2);
         this.set_height(this.get(bps, "height") + 2);

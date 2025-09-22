@@ -132,7 +132,8 @@ public abstract class Pinnable {
 	}
 
 	protected boolean is_on_gui() {
-		return Client.click_hud.on_gui;
+		// return Client.click_hud.on_gui; // Disabled for now
+		return false;
 	}
 }
 

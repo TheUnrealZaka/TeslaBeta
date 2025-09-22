@@ -2,6 +2,7 @@ package com.bieme.tesla.other.guiscreen.hud;
 
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 
 public class TPS extends Pinnable {
 
@@ -13,13 +14,13 @@ public class TPS extends Pinnable {
     }
 
     @Override
-    public void render() {
+    public void render(GuiGraphics guiGraphics) {
         updateTPS();
 
         int r = 255, g = 255, b = 255, a = 255;
 
         String line = "TPS: " + getTPSFormatted();
-        create_line(line, this.docking(1, line), 2, r, g, b, a);
+        create_line(guiGraphics, line, this.docking(1, line), 2, r, g, b, a);
 
         this.set_width(this.get(line, "width") + 2);
         this.set_height(this.get(line, "height") + 2);

@@ -47,10 +47,10 @@ public class ModuleButton {
 					widget.add(new Button(master, this, setting.get_tag(), settings_height));
 					break;
 				case "combobox":
-					widget.add(new WurstplusCombobox(master, this, setting.get_tag(), settings_height));
+					// widget.add(new WurstplusCombobox(master, this, setting.get_tag(), settings_height)); // Disabled
 					break;
 				case "label":
-					widget.add(new WurstplusLabel(master, this, setting.get_tag(), settings_height));
+					// widget.add(new WurstplusLabel(master, this, setting.get_tag(), settings_height)); // Disabled
 					break;
 				case "doubleslider":
 				case "integerslider":

@@ -25,7 +25,7 @@ public class InventoryPreview extends Pinnable {
 			this.set_width(16 * 9);
 			this.set_height(16 * 3);
 
-			create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 60);
+			create_rect(guiGraphics, 0, 0, this.get_width(), this.get_height(), 0, 0, 0, 60);
 
 			for (int i = 9; i < 36; i++) {
 				ItemStack stack = inv.getItem(i);

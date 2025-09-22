@@ -182,4 +182,13 @@ public class Frame {
 	public boolean is_binding() {
 		return isBinding();
 	}
+	
+	// Additional methods for ClientGui compatibility
+	public void does_button_for_do_widgets_can(boolean value) {
+		does_can(value);
+	}
+	
+	public String get_tag() {
+		return category.getName();
+	}
 }

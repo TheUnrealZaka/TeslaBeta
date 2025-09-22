@@ -16,6 +16,9 @@ public class ClientGui extends Screen {
 
 	private int frame_x = 10;
 	private Frame current;
+	
+	// Field needed by Pinnable classes
+	public boolean on_gui = false;
 
 	public int theme_frame_name_r         = 0;
 	public int theme_frame_name_g         = 0;
@@ -125,7 +128,7 @@ public class ClientGui extends Screen {
 	public void render(net.minecraft.client.gui.GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		for (Frame frame : this.frame) {
-			frame.render(mouseX, mouseY);
+			frame.render(guiGraphics, mouseX, mouseY, 0);
 		}
 	}
 
