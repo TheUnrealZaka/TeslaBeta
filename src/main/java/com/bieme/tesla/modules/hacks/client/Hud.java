@@ -106,7 +106,6 @@ public class Hud extends Screen {
     @Override
     public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
         frame.render(context, mouseX, mouseY, 2);
-        frame.render(mouseX, mouseY, 2);
         super.render(context, mouseX, mouseY, delta);
     }
 }

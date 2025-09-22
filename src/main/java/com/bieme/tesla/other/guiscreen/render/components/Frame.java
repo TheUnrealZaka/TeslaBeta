@@ -156,6 +156,11 @@ public class Frame {
 		mouseClicked(mouseX, mouseY, mouseButton);
 	}
 	
+	// Additional release method for compatibility
+	public void release(int mouseX, int mouseY, int mouseButton) {
+		mouseReleased(mouseX, mouseY, mouseButton);
+	}
+	
 	// Additional methods for compatibility 
 	public boolean can() {
 		return !dragging;
@@ -171,5 +176,10 @@ public class Frame {
 	
 	public void set_move_y(int y) {
 		this.dragY = y;
+	}
+	
+	// Additional binding method for compatibility
+	public boolean is_binding() {
+		return isBinding();
 	}
 }

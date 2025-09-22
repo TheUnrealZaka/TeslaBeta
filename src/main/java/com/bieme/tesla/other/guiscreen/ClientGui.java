@@ -52,7 +52,7 @@ public class ClientGui extends Screen {
 		super(null);
 
 		for (Category category : Category.values()) {
-			Frame frame = new Frame(category);
+			Frame frame = new Frame(category, frame_x, 3);
 			frame.set_x(this.frame_x);
 			this.frame.add(frame);
 			this.frame_x += frame.get_width() + 5;
@@ -70,8 +70,8 @@ public class ClientGui extends Screen {
 
 	@Override
 	public void removed() {
-		if (Client.hackManager != null)
-			Client.hackManager.get_module_with_tag("GUI").set_active(false);
+		if (Client.getHackManager() != null)
+			Client.getHackManager().get_module_with_tag("GUI").set_active(false);
 	}
 
 	@Override
