@@ -18,7 +18,7 @@ import net.minecraft.world.phys.EntityHitResult;
 
 import org.lwjgl.glfw.GLFW;
 
-public class MiddleClick extends Module {
+public class MCF extends Module {
 
     public boolean friend = true;
     public boolean silentXp = true;
@@ -28,7 +28,7 @@ public class MiddleClick extends Module {
     private boolean check = false;
     private final Minecraft mc = Minecraft.getInstance();
 
-    public MiddleClick() {
+    public MCF() {
         super("MiddleClick", "Multifunction middle click", "Adds/removes friends, throws pearls or XP with middle click", Category.MISC);
     }
 

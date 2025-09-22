@@ -1,6 +1,6 @@
 package com.bieme.tesla.other.guiscreen.render.components.widgets;
 
-import me.travis.wurstplus.Wurstplus;
+import com.bieme.tesla.Client;
 import com.bieme.tesla.other.guiscreen.render.ClientDraw;
 import com.bieme.tesla.other.guiscreen.render.components.AbstractWidget;
 import com.bieme.tesla.other.guiscreen.render.components.Frame;

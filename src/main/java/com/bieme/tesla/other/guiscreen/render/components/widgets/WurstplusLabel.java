@@ -1,14 +1,11 @@
 package com.bieme.tesla.other.guiscreen.render.components.widgets;
 
-import me.travis.turok.draw.RenderHelp;
-import me.travis.wurstplus.Wurstplus;
+import com.bieme.tesla.Client;
 import com.bieme.tesla.other.guiscreen.render.ClientDraw;
 import com.bieme.tesla.other.guiscreen.render.components.AbstractWidget;
 import com.bieme.tesla.other.guiscreen.render.components.Frame;
 import com.bieme.tesla.other.guiscreen.render.components.ModuleButton;
 import com.bieme.tesla.other.guiscreen.settings.Setting;
-import net.minecraft.client.renderer.GlStateManager;
-import org.lwjgl.opengl.GL11;
 
 // Travis.
 

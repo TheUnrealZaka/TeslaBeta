@@ -88,6 +88,12 @@ public class Slider extends AbstractWidget {
         return mouseX >= x && mouseX <= x + width &&
                mouseY >= save_y && mouseY <= save_y + height;
     }
+
+    // Method required by AbstractWidget
+    public boolean is_hovering(int mx, int my) {
+        return mx >= x && mx <= x + width &&
+               my >= save_y && my <= save_y + height;
+    }
     @Override
     public void set_x(int x) {
         this.x = x;

@@ -30,16 +30,16 @@ public class Button extends AbstractWidget {
 	public Button(Frame frame, ModuleButton master, String tag, int update_position) {
 		this.frame = frame;
 		this.master = master;
-		this.setting = Client.get_setting_manager().get_setting_with_tag(master.get_module(), tag);
+		this.setting = Client.getSettingManager().getSettingByTag(master.get_module().getName(), tag);
 
 		this.x = master.get_x();
 		this.y = update_position;
 		this.save_y = this.y;
 
 		this.width = master.get_width();
-		this.height = font.get_string_height();
+		this.height = font.getStringHeight();
 
-		this.button_name = this.setting.get_name();
+		this.button_name = this.setting.getName();
 		this.can = true;
 	}
 
@@ -113,7 +113,7 @@ public class Button extends AbstractWidget {
 	public void mouse(int mx, int my, int mouse) {
 		if (mouse == 0 && motion(mx, my) && this.master.is_open() && can()) {
 			this.frame.does_can(false);
-			this.setting.set_value(!this.setting.get_value(true));
+			this.setting.setValue(!this.setting.getValue());
 		}
 	}
 
@@ -132,10 +132,10 @@ public class Button extends AbstractWidget {
 		int bg_b = Client.clickGui.theme_widget_background_b;
 		int bg_a = Client.clickGui.theme_widget_background_a;
 
-		if (this.setting.get_value(true)) {
-			ClientDraw.draw_rect(get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
+		if (this.setting.getValue()) {
+			ClientDraw.drawRect(null, get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, new java.awt.Color(bg_r, bg_g, bg_b, bg_a));
 		}
 
-		ClientDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, ns_a);
+		ClientDraw.drawString(null, this.button_name, this.x + 2, this.save_y, new java.awt.Color(ns_r, ns_g, ns_b, ns_a));
 	}
 }
