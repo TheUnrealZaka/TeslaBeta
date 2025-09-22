@@ -19,6 +19,16 @@ public class ClientGui extends Screen {
 	
 	// Field needed by Pinnable classes
 	public boolean on_gui = false;
+	
+	// Methods for HUD support
+	public Frame get_frame_hud() {
+		return frame.isEmpty() ? null : frame.get(0);
+	}
+	
+	public java.util.List<Object> get_array_huds() {
+		// TODO: Return actual HUD list when implemented
+		return new java.util.ArrayList<>();
+	}
 
 	public int theme_frame_name_r         = 0;
 	public int theme_frame_name_g         = 0;

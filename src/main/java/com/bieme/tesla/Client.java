@@ -37,7 +37,7 @@ public class Client {
     private static ManagerConfig configManager = new ManagerConfig();
     private static MessageUtil messageUtil = new MessageUtil();
 
-    // public static ClientGui click_hud = new ClientGui(); // Disabled for now
+    public static ClientGui click_hud = new ClientGui();
 
     public static final int KEY_GUI_ESCAPE = 1;
     public static final int KEY_DELETE = 211;
@@ -51,10 +51,10 @@ public class Client {
         commandManager = new ManagerCommand();
         friendManager = new ManagerFriend();
         clickGui = new ClientGui();
-        // click_hud = clickGui; // Disabled for now
+        click_hud = clickGui;
 
         hackManager.init();
-        // commandManager.init(); // Disabled for now
+        commandManager.init();
 
         LOGGER.info("Client started.");
     }
