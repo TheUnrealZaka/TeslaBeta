@@ -62,3 +62,13 @@ public class ManagerSetting {
     }
 
 }
+
+    // Additional compatibility methods  
+    public Setting get_setting_with_tag(String moduleTag, String settingTag) {
+        return getSettingByTag(moduleTag, settingTag);
+    }
+    
+    public Setting get_setting_with_tag(Module module, String settingTag) {
+        return getSettingByTag(module.getTag(), settingTag);
+    }
+}

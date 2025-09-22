@@ -196,4 +196,25 @@ public class Setting {
 	public boolean isInteger() {
 		return type.equals("int");
 	}
+	
+	// Additional compatibility methods
+	public String get_current_value() {
+		return getStringValue();
+	}
+	
+	public void set_current_value(String value) {
+		setStringValue(value);
+	}
+	
+	public List<String> get_values() {
+		return options != null ? options : new ArrayList<>();
+	}
+	
+	public String get_name() {
+		return getName();
+	}
+	
+	public int get_sliderValueInt() {
+		return getSliderValueInt();
+	}
 }

@@ -51,6 +51,12 @@ public abstract class Module {
     public int getKey() { return this.bind; }
     public void setActive(boolean state) { setEnabled(state); }
     public void set_active(boolean state) { setEnabled(state); }
+    public boolean is_active() { return isEnabled(); }
+    public void set_bind(int key) { setBind(key); }
+    public boolean isActive() { return isEnabled(); }
+    public void set_if_can_send_message_toggle(boolean value) { 
+        // TODO: Implement message toggle functionality 
+    }
 
     // Toggle
     public void toggle() {
