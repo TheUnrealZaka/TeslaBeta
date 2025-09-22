@@ -1,12 +1,11 @@
 package com.bieme.tesla.other.guiscreen.hud;
 
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
-import me.travis.wurstplus.wurstplustwo.util.WurstplusPlayerUtil;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.BlockPos;
 
 public class WurstplusSurroundBlocks extends Pinnable {
 

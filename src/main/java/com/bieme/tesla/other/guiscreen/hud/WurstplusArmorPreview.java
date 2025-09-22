@@ -4,7 +4,7 @@ import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.ItemStack;
 
 public class WurstplusArmorPreview extends Pinnable {
 	public WurstplusArmorPreview() {

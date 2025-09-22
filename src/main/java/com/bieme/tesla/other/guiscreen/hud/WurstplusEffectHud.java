@@ -1,7 +1,6 @@
 package com.bieme.tesla.other.guiscreen.hud;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-import me.travis.wurstplus.Wurstplus;
+import net.minecraft.ChatFormatting;
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.MobEffects;

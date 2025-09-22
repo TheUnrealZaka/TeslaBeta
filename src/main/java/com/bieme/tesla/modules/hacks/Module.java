@@ -45,6 +45,11 @@ public abstract class Module {
     // Setters
     public void setBind(int key) { this.bind = key; }
     public void setSendToggleMessage(boolean value) { this.sendToggleMessage = value; }
+    
+    // Additional methods for compatibility
+    public void setKey(int key) { this.bind = key; }
+    public int getKey() { return this.bind; }
+    public void setActive(boolean state) { setEnabled(state); }
 
     // Toggle
     public void toggle() {

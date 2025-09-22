@@ -1,9 +1,7 @@
 package com.bieme.tesla.other.guiscreen.hud;
 
 
-import me.travis.wurstplus.Wurstplus;
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
-import me.travis.wurstplus.wurstplustwo.util.WurstplusTimeUtil;
 
 public class WurstplusTime extends Pinnable {
     

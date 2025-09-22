@@ -1,7 +1,7 @@
 package com.bieme.tesla.other.guiscreen.hud;
 
 import com.bieme.tesla.other.guiscreen.render.pinnables.Pinnable;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
