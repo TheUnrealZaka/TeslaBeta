@@ -69,11 +69,11 @@ public class PinnableFrame {
 
 		this.can = true;
 
-		int size  = 0; // Client.get_hud_manager().get_array_huds().size(); // TODO: Re-implement when HUD manager is ready
+		int size  = Client.get_hud_manager().get_array_huds().size();
 		int count = 0;
 
-		// for (Pinnable pinnables : Client.get_hud_manager().get_array_huds()) { // TODO: Re-implement
-		/* PinnableButton pinnables_buttons = new PinnableButton(this, pinnables.get_title(), pinnables.get_tag());
+		for (Pinnable pinnables : Client.get_hud_manager().get_array_huds()) {
+			PinnableButton pinnables_buttons = new PinnableButton(this, pinnables.get_title(), pinnables.get_tag());
 
 			pinnables_buttons.set_y(this.height);
 

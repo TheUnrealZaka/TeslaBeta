@@ -32,7 +32,7 @@ public class PinnableButton {
 		this.name = name;
 		this.tag  = tag;
 
-		// this.pinnable = Client.get_hud_manager().get_pinnable_with_tag(tag); // TODO: Re-implement when HUD manager is ready
+		this.pinnable = Client.get_hud_manager().get_pinnable_with_tag(tag);
 
 		this.x = master.get_x();
 		this.y = master.get_y();

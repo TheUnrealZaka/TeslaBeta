@@ -203,27 +203,24 @@ public class ManagerConfig {
     }
 
     private void loadHud() throws IOException {
-        // TODO: Implement HUD loading when HUD system is complete
-        // Temporarily disabled to fix compilation
-        /*
         InputStream stream = Files.newInputStream(HUD_PATH);
         JsonObject json = JsonParser.parseReader(new InputStreamReader(stream)).getAsJsonObject();
-        JsonObject frame = json.get("frame").getAsJsonObject();
-        JsonObject hud = json.get("hud").getAsJsonObject();
-
-        Client.click_hud.get_frame_hud().set_x(frame.get("x").getAsInt());
-        Client.click_hud.get_frame_hud().set_y(frame.get("y").getAsInt());
-
-        for (Pinnable pin : Client.click_hud.get_array_huds()) {
-            JsonObject obj = hud.get(pin.get_tag()).getAsJsonObject();
-            pin.set_active(obj.get("state").getAsBoolean());
-            pin.set_dock(obj.get("dock").getAsBoolean());
-            pin.set_x(obj.get("x").getAsInt());
-            pin.set_y(obj.get("y").getAsInt());
+        
+        if (json.has("hud")) {
+            JsonObject hud = json.get("hud").getAsJsonObject();
+            
+            for (Pinnable pin : Client.get_hud_manager().get_array_huds()) {
+                if (hud.has(pin.get_tag())) {
+                    JsonObject obj = hud.get(pin.get_tag()).getAsJsonObject();
+                    pin.set_active(obj.get("state").getAsBoolean());
+                    pin.set_dock(obj.get("dock").getAsBoolean());
+                    pin.set_x(obj.get("x").getAsInt());
+                    pin.set_y(obj.get("y").getAsInt());
+                }
+            }
         }
 
         stream.close();
-        */
     }
 
     public void saveSettings() {
