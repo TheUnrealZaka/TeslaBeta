@@ -150,4 +150,26 @@ public class Frame {
 	public boolean motion(int mouseX, int mouseY) {
 		return mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height;
 	}
+	
+	// Additional mouse method for compatibility
+	public void mouse(int mouseX, int mouseY, int mouseButton) {
+		mouseClicked(mouseX, mouseY, mouseButton);
+	}
+	
+	// Additional methods for compatibility 
+	public boolean can() {
+		return !dragging;
+	}
+	
+	public void set_move(boolean move) {
+		this.move = move;
+	}
+	
+	public void set_move_x(int x) {
+		this.dragX = x;
+	}
+	
+	public void set_move_y(int y) {
+		this.dragY = y;
+	}
 }

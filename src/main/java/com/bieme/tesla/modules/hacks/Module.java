@@ -50,6 +50,7 @@ public abstract class Module {
     public void setKey(int key) { this.bind = key; }
     public int getKey() { return this.bind; }
     public void setActive(boolean state) { setEnabled(state); }
+    public void set_active(boolean state) { setEnabled(state); }
 
     // Toggle
     public void toggle() {

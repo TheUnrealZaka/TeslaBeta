@@ -32,7 +32,6 @@ public class MCF extends Module {
         super("MiddleClick", "Multifunction middle click", "Adds/removes friends, throws pearls or XP with middle click", Category.MISC);
     }
 
-    @Override
     public void update() {
         if (mc.screen != null) return;
 

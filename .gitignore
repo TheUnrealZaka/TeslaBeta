@@ -24,3 +24,6 @@ runs
 run-data
 
 repo
+
+# Temporarily disabled classes during fixes
+*.disabled

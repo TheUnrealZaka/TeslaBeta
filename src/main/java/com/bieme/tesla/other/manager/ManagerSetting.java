@@ -61,8 +61,4 @@ public class ManagerSetting {
         return null;
     }
 
-    public List<Setting> getSettingsWithModule(Module module) {
-        return moduleSettings.getOrDefault(module, new ArrayList<>());
-    }
-
 }

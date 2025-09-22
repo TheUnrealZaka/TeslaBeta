@@ -25,7 +25,7 @@ public class Slider extends AbstractWidget {
 
         double min = setting.getMin();
         double max = setting.getMax();
-        double value = setting.getValue();
+        double value = setting.getValueInt();
         this.percent = (value - min) / (max - min);
     }
 
@@ -42,7 +42,7 @@ public class Slider extends AbstractWidget {
         int filledWidth = (int) (percent * width);
         guiGraphics.fill(x, save_y, x + filledWidth, save_y + height, fillColor);
 
-        String valueText = setting.getName() + ": " + String.format("%.2f", setting.getValue());
+        String valueText = setting.getName() + ": " + String.format("%.2f", setting.getValueInt());
         guiGraphics.drawString(mc.font, Component.literal(valueText), x + 4, save_y + 2, textColor);
 
         if (dragging) {

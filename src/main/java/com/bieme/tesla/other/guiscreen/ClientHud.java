@@ -31,37 +31,37 @@ public class ClientHud extends Screen {
 	public void initGui() {
 		this.on_gui = true;
 
-		PinnableFrame.nc_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameFrameR").getValue();
-		PinnableFrame.nc_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameFrameG").getValue();
-		PinnableFrame.nc_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameFrameB").getValue();
+		PinnableFrame.nc_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameFrameR").getValueInt();
+		PinnableFrame.nc_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameFrameG").getValueInt();
+		PinnableFrame.nc_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameFrameB").getValueInt();
 
-		PinnableFrame.bg_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameR").getValue();
-		PinnableFrame.bg_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameG").getValue();
-		PinnableFrame.bg_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameB").getValue();
-		PinnableFrame.bg_a = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameA").getValue();
+		PinnableFrame.bg_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameR").getValueInt();
+		PinnableFrame.bg_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameG").getValueInt();
+		PinnableFrame.bg_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameB").getValueInt();
+		PinnableFrame.bg_a = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundFrameA").getValueInt();
 
-		PinnableFrame.bd_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderFrameR").getValue();
-		PinnableFrame.bd_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderFrameG").getValue();
-		PinnableFrame.bd_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderFrameB").getValue();
+		PinnableFrame.bd_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderFrameR").getValueInt();
+		PinnableFrame.bd_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderFrameG").getValueInt();
+		PinnableFrame.bd_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderFrameB").getValueInt();
 		PinnableFrame.bd_a = 0;
 
-		PinnableFrame.bdw_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValue();
-		PinnableFrame.bdw_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValue();
-		PinnableFrame.bdw_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValue();
+		PinnableFrame.bdw_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValueInt();
+		PinnableFrame.bdw_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValueInt();
+		PinnableFrame.bdw_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValueInt();
 		PinnableFrame.bdw_a = 255;
 
-		PinnableButton.nc_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameWidgetR").getValue();
-		PinnableButton.nc_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameWidgetG").getValue();
-		PinnableButton.nc_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameWidgetB").getValue();
+		PinnableButton.nc_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameWidgetR").getValueInt();
+		PinnableButton.nc_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameWidgetG").getValueInt();
+		PinnableButton.nc_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUINameWidgetB").getValueInt();
 
-		PinnableButton.bg_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetR").getValue();
-		PinnableButton.bg_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetG").getValue();
-		PinnableButton.bg_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetB").getValue();
-		PinnableButton.bg_a = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetA").getValue();
+		PinnableButton.bg_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetR").getValueInt();
+		PinnableButton.bg_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetG").getValueInt();
+		PinnableButton.bg_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetB").getValueInt();
+		PinnableButton.bg_a = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBackgroundWidgetA").getValueInt();
 
-		PinnableButton.bd_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValue();
-		PinnableButton.bd_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValue();
-		PinnableButton.bd_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValue();
+		PinnableButton.bd_r = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetR").getValueInt();
+		PinnableButton.bd_g = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetG").getValueInt();
+		PinnableButton.bd_b = Client.getSettingManager().getSettingByTag("GUI", "ClickGUIBorderWidgetB").getValueInt();
 	}
 
 	@Override

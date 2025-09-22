@@ -113,7 +113,7 @@ public class Button extends AbstractWidget {
 	public void mouse(int mx, int my, int mouse) {
 		if (mouse == 0 && motion(mx, my) && this.master.is_open() && can()) {
 			this.frame.does_can(false);
-			this.setting.setValue(!this.setting.getValue());
+			this.setting.setValue(!this.setting.getValueInt());
 		}
 	}
 
@@ -132,7 +132,7 @@ public class Button extends AbstractWidget {
 		int bg_b = Client.clickGui.theme_widget_background_b;
 		int bg_a = Client.clickGui.theme_widget_background_a;
 
-		if (this.setting.getValue()) {
+		if (this.setting.getValueInt()) {
 			ClientDraw.drawRect(null, get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, new java.awt.Color(bg_r, bg_g, bg_b, bg_a));
 		}
 
